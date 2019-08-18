@@ -6,9 +6,6 @@ const socket = require('socket.io');
 const app = express();
 
 app.get('/', (req,res,next) => {
-    res.send('Hi');
-})
-app.get('/desktop', (req,res,next) => {
     res.sendFile(path.join(__dirname, 'public', 'Desktop', 'index.html'));
 });
 
@@ -16,7 +13,7 @@ app.get('/mobile', (req,res,next) => {
     res.sendFile(path.join(__dirname, 'public', 'Mobile', 'mobile.html'));
 });
 
-let server = app.listen(8080);
+let server = app.listen(process.env.PORT || 8080);
 const io = socket(server); 
 
 io.on('connection', function(socket){
