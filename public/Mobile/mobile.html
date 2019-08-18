@@ -11,16 +11,15 @@
     Tilt your phone
     <p id="data"></p>
 <script>
-    window.onload = function(){
         const socket = io();
 
         function handleOrientation(e){
             socket.emit('orientation', e.gamma);
-            document.querySelector('#data').innerHTML = 'Supported';
+            document.querySelector('#data').innerHTML += 'Supported';
         }
 
         window.addEventListener("deviceorientation", handleOrientation, true);
-    }
+
         
 
 </script>
