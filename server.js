@@ -5,7 +5,7 @@ const socket = require('socket.io');
 
 const app = express();
 
-app.get('/', (req,res,next) => {
+app.get('/desktop', (req,res,next) => {
     res.sendFile(path.join(__dirname, 'public', 'Desktop', 'index.html'));
 });
 
