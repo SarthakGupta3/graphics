@@ -39,9 +39,15 @@
         cube.position.x = -4;
         cube.castShadow = true;
         const socket = io();
+        let rotation = 0;
         socket.on('change', function(e){
-            console.log(e)
+            rotation = Math.floor(e);
         })
+        function move(){
+            requestAnimationFrame(move);
+            cube.rotation.x += rotation;
+        }
+        
         scene.add(cube);
         let spotlight = new THREE.SpotLight(0xffffff);
         spotlight.position.set(-40, 40, -10);
