@@ -48,6 +48,8 @@
             requestAnimationFrame(move);
             cube.position.x = rotation;
             cube.rotation.y = rotation;
+            cube.rotation.x = rotation;
+            cube.rotation.z = rotation;
             renderer.render(scene, camera);
             prevValue = rotation;   
         }    
