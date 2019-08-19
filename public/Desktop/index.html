@@ -41,9 +41,11 @@
         const socket = io();
         let rotation = 0;
         socket.on('change', function(e){
-            rotation = Math.floor(e);
+            rotation = Math.floor(e); 
+            move(); 
         })
         function move(){
+            console.log(rotation);
             requestAnimationFrame(move);
             cube.rotation.x += rotation;
         }
