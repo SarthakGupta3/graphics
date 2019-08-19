@@ -50,7 +50,7 @@
         output.append(renderer.domElement);
         const socket = io();
         socket.on('change', function(e){
-            console.log(e);
+            cube.position.y = e;
         })
         renderer.render(scene, camera);
     </script>
