@@ -18,7 +18,7 @@ const io = socket(server);
 
 io.on('connection', function(socket){
     socket.on('orientation',function(e){
-        console.log(e);
+       io.emit('change', e)
     });
 })
 
