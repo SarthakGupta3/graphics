@@ -38,6 +38,10 @@
         cube.position.y = 2;
         cube.position.x = -4;
         cube.castShadow = true;
+        const socket = io();
+        socket.on('change', function(e){
+            cube.position.y = e;
+        })
         scene.add(cube);
         let spotlight = new THREE.SpotLight(0xffffff);
         spotlight.position.set(-40, 40, -10);
@@ -48,10 +52,7 @@
         camera.position.z = 30;
         camera.lookAt(scene.position);  
         output.append(renderer.domElement);
-        const socket = io();
-        socket.on('change', function(e){
-            cube.position.y = e;
-        })
+        
         renderer.render(scene, camera);
     </script>
 </body>
