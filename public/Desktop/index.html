@@ -40,8 +40,8 @@
         cube.castShadow = true;
         const socket = io();
         socket.on('change', function(e){
-            console.log(Math.abs(e));
-            cube.position.x = Math.abs(e);
+            console.log(Math.floor(e));
+            cube.position.x = Math.floor(e);
         })
         scene.add(cube);
         let spotlight = new THREE.SpotLight(0xffffff);
