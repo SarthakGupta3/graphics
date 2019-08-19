@@ -46,7 +46,7 @@
         })
         function move(){
             requestAnimationFrame(move);
-            cube.rotation.x += rotation;
+            cube.rotation.x = rotation;
             renderer.render(scene, camera);
             prevValue = rotation;   
         }    
