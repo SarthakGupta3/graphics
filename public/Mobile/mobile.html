@@ -15,7 +15,7 @@
 
         function handleOrientation(e){
             socket.emit('orientation', e.gamma);
-            document.querySelector('#data').innerHTML += 'Supported';
+            document.querySelector('#data').innerHTML = 'Supported';
         }
 
         window.addEventListener("deviceorientation", handleOrientation, true);
